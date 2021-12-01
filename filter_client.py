@@ -5,12 +5,10 @@ from sensordata.srv import do_filter_calc, do_filter_calcResponse
 from sensordata.msg import RawValue
 from sensordata.msg import FilteredValue
 
-
 def publish_to_visualizer(pub, filtered_value):
     filtered_value_msg = FilteredValue()
     filtered_value_msg.filtered_value = filtered_value
     pub.publish(filtered_value_msg)
-
 
 def filter_client(data):
     raw_value = data.raw_value
@@ -29,7 +27,6 @@ def subscriber():
     rospy.loginfo("Startet publishing av filtered values...")
     rospy.Subscriber('fpmg_raw', RawValue, filter_client)
     rospy.spin()
-
 
 if __name__ == '__main__':
     subscriber()
