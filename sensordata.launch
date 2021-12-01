@@ -1,0 +1,7 @@
+﻿<launch>
+<!-- fire ulike noder noder som bruker sensordata pkg -->
+    <node pkg="sensordata" type="sensordata_publisher.py" name="sensordata_publisher" output="screen"></node>
+    <node pkg="sensordata" type="filter_server.py" name="filter_server" output="screen"></node>
+    <node pkg="sensordata" type="filter_client.py" name="filter_client" output="screen"></node>
+    <node pkg="sensordata" type="visualizer.py" name="visualizer" output="screen"></node>
+</launch>
