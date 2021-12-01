@@ -3,7 +3,6 @@
 import rospy
 from sensordata.srv import do_filter_calc, do_filter_calcResponse
 
-
 def filter_callback(request):
     raw_value = request.raw_value
 # Filtrerer bort >110
